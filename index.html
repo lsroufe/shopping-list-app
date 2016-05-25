@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Logan's Shopping List App</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+</head>
+<body>
+	<div class="container" style="width: 500px; margin: 0 auto;">
+		<h1>Shopping List</h1>
+		<form>
+			<div data-role="fieldcontain">
+				<label for="food">Add item:</label>
+				<input type="text" name="food" id="food">
+			</div>
+			<input type="submit" value="Submit" data-icon="check" data-iconpos="right" data-inline="true" class="ui-btn-inline">
+		</form>
+		<div id="listitems">
+			<label><input type="checkbox" name="food" value="bread"> Bread <a href="#" class="ui-btn ui-btn-inline ui-mini" style="float:right">Delete</a></label>
+			<label><input type="checkbox" name="food" value="cheese"> Cheese <a href="#" class="ui-btn ui-btn-inline ui-mini" style="float:right">Delete</a></label>
+			<label><input type="checkbox" name="food" value="beer"> Beer <a href="#" class="ui-btn ui-btn-inline ui-mini" style="float:right">Delete</a></label>
+			<label><input type="checkbox" name="food" value="salad"> Salad <a href="#" class="ui-btn ui-btn-inline ui-mini" style="float:right">Delete</a></label>
+		</div>
+	</div>
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
