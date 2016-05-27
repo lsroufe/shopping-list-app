@@ -1,7 +1,25 @@
-label {
-	display: block;
+form {
+    display: inline-block;
+}
+.form-group {
+    text-align: center;
+    padding-bottom: 25px;
+}
+#todo {
+    margin: 0 auto;
+    width: 500px;
 }
 
-label a {
-	float: right;
+a.btn {
+  float: right;
+}
+
+#page, #bottom {
+	text-align: center;
+	margin-top: 10px;
+}
+
+ul {
+	margin-bottom: 0;
+    padding: 10px;
 }
