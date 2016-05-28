@@ -1,10 +1,27 @@
 $(document).ready(function () {
-    $('button').click(function () {
-        $('#todo').append("<ul>" + $("input[name=newItem]").val() + " <a href='#' class='btn btn-danger' aria-hidden='true'>&times;</a></ul>");
+    $('form').on('submit',function(e) {
+    	e.preventDefault();
+
+    	var newItem = $('input').val();
+    	var listItem = '<li>'+
+    				       '<input type="checkbox" id="item"> ' + newItem + '<a href="#" class="btn btn-danger" aria-hidden="true">&times;</a>' +
+    				    '</li>';
+
+    	$('#todo').append(listItem);
     });
+
     $("body").on('click', '#todo a', function () {
-        $(this).closest("ul").remove();
+        $(this).closest("li").remove();
     });
+
+     $('#todo').change(function() {
+     	$('#list-items').toggleClass('active', this.checked)
+     });
+
+    // on click on the checkbox / check
+    // change text-decoration of li
+    // either
+    // 	$().toggleClass('')
 });
 
 
@@ -19,8 +36,3 @@ $(document).ready(function () {
 // 		var newItem = $('<label><input type="checkbox" name="food"> ' + inputValue + '<a href="#">Delete</a></label>');
 // 		$('fieldset').append(newItem);
 // 	});
-	// on form submit
-	//  get input text value
-	//  create new label element with checkbox, text and delete button
-	//  preappend or append the new label to the div
-// });
