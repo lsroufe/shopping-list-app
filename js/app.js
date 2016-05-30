@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     var newItem 	= $('input[type="text"]').val();
     var checkBox 	= $('<input type="checkbox">');
-    var aTag 			= $('<a href="#" class="btn btn-danger" aria-hidden="true">&times;</a>');
+    var aTag 		= $('<a href="#" class="btn btn-danger" aria-hidden="true">&times;</a>');
     var listItem 	= $('<li class="list-item"> ' + newItem + '</li>');
     listItem.prepend(checkBox);
     listItem.append(aTag);
@@ -13,7 +13,7 @@ $(document).ready(function() {
   });
 
 	$('body').on('change', '.list-item input', onChange);
-  $('body').on('click', '.list-item a', onClick);
+    $('body').on('click', '.list-item a', onClick);
 
 //THe checkbox has changed
   function onChange(){
