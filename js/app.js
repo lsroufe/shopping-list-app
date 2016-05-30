@@ -1,28 +1,35 @@
-$(document).ready(function () {
-    $('form').on('submit',function(e) {
-    	e.preventDefault();
+$(document).ready(function() {
+  $('form').on('submit', function(e) {
+    e.preventDefault();
 
-    	var newItem = $('input').val();
-    	var listItem = '<li>'+
-    				       '<input type="checkbox" id="item"> ' + newItem + '<a href="#" class="btn btn-danger" aria-hidden="true">&times;</a>' +
-    				    '</li>';
+    var newItem 	= $('input[type="text"]').val();
+    var checkBox 	= $('<input type="checkbox">');
+    var aTag 			= $('<a href="#" class="btn btn-danger" aria-hidden="true">&times;</a>');
+    var listItem 	= $('<li class="list-item"> ' + newItem + '</li>');
+    listItem.prepend(checkBox);
+    listItem.append(aTag);
 
-    	$('#todo').append(listItem);
-    });
+    $('#todo').append( listItem );
+  });
 
-    $("body").on('click', '#todo a', function () {
-        $(this).closest("li").remove();
-    });
+	$('body').on('change', '.list-item input', onChange);
+  $('body').on('click', '.list-item a', onClick);
 
-     $('#todo').change(function() {
-     	$('#list-items').toggleClass('active', this.checked)
-     });
+//THe checkbox has changed
+  function onChange(){
+    $(this).closest('.list-item').toggleClass('active', this.checked);
+  }
+  
+//The delete button has been clicked
+  function onClick(){
+  	$(this).closest('.list-item').remove();
+  }
+});
 
     // on click on the checkbox / check
     // change text-decoration of li
     // either
     // 	$().toggleClass('')
-});
 
 
 
